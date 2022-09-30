@@ -6,7 +6,7 @@
 /*   By: hyoh <hyoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/10 13:48:08 by hyoh              #+#    #+#             */
-/*   Updated: 2022/09/28 17:15:43 by hyoh             ###   ########.fr       */
+/*   Updated: 2022/09/29 10:17:59 by hyoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ void	ft_putnbr_base(unsigned long var, t_info info, long long *ret);
 int		intlen(t_info *info, long num);
 int		uintlen(t_info *info, unsigned int num);
 int		hexlen(t_info *info, unsigned long num);
-int		ft_strlen(t_info info, void *var);
+int		ft_strlen(t_info *info, void *var);
 int		get_zero_num(t_info info);
 
 #endif

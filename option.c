@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   check_bonus.c                                      :+:      :+:    :+:   */
+/*   option_bonus.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyoh <hyoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 10:40:01 by hyoh              #+#    #+#             */
-/*   Updated: 2022/09/28 16:01:57 by hyoh             ###   ########.fr       */
+/*   Updated: 2022/09/29 09:54:57 by hyoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,6 +87,8 @@ void	preci_check(va_list ap, const char **fix, t_info *info)
 
 int	check(t_info *info, long long *ret)
 {
+	if (info->flag[3] == 1)
+		info->flag[4] = 0;
 	if (info->width < 0)
 	{
 		info->width = -(info->width);

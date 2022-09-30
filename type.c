@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   type.c                                             :+:      :+:    :+:   */
+/*   type_bonus.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyoh <hyoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 09:09:58 by hyoh              #+#    #+#             */
-/*   Updated: 2022/09/28 17:13:56 by hyoh             ###   ########.fr       */
+/*   Updated: 2022/09/29 10:14:44 by hyoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,7 +114,7 @@ int	print_cha(char var, t_info info, long long *ret)
 
 int	print_str(char *var, t_info info, long long *ret)
 {
-	info.len = ft_strlen(info, var);
+	info.len = ft_strlen(&info, var);
 	info.zero = 0;
 	info.blank = get_blank_num(info);
 	*ret += info.len + info.blank;

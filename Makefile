@@ -6,13 +6,13 @@
 #    By: hyoh <hyoh@student.42.fr>                  +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/10 14:01:37 by hyoh              #+#    #+#              #
-#    Updated: 2022/09/28 16:41:47 by hyoh             ###   ########.fr        #
+#    Updated: 2022/09/29 13:58:38 by hyoh             ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-CC = gcc
+CC = cc
 CFLAG = -Wall -Wextra -Werror
 RM = rm -f
 AR = ar -crs
@@ -33,7 +33,9 @@ OBJS = $(SRCS:.c=.o)
 OBJS_BN = $(SRCS_BN:.c=.o)
 
 ifdef WITH_BONUS
-	OBJS += $(OBJS_BN)
+	OBJECT = $(OBJS_BN)
+else
+	OBJECT = $(OBJS)
 endif
 
 all : $(NAME)
@@ -44,7 +46,7 @@ bonus :
 %.o : %.c
 	$(CC) $(CFLAG) -c $< -o $@
 
-$(NAME) : $(OBJS)
+$(NAME) : $(OBJECT)
 	$(AR) $@ $^
 
 clean :

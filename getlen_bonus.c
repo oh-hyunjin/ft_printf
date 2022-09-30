@@ -6,7 +6,7 @@
 /*   By: hyoh <hyoh@student.42.fr>                  +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/24 08:46:59 by hyoh              #+#    #+#             */
-/*   Updated: 2022/09/28 16:12:22 by hyoh             ###   ########.fr       */
+/*   Updated: 2022/09/29 10:18:02 by hyoh             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@ int	intlen(t_info *info, long num)
 {
 	int	len;
 
-	if (info->precision == 0 && num == 0)
-		return (0);
 	info->pre = 0;
 	if (num >= 0 && (info->flag[1] || info->flag[2]))
 		info->pre = 1;
-	else if (num < 0)
+	if (info->precision == 0 && num == 0)
+		return (0);
+	if (num < 0)
 	{
 		info->pre = 1;
 		num = -num;
@@ -74,11 +74,12 @@ int	hexlen(t_info *info, unsigned long num)
 	return (len);
 }
 
-int	ft_strlen(t_info info, void *var)
+int	ft_strlen(t_info *info, void *var)
 {
 	char	*str;
 	int		len;
 
+	info->pre = 0;
 	str = var;
 	if (str == NULL)
 		len = 6;
@@ -88,8 +89,8 @@ int	ft_strlen(t_info info, void *var)
 		while (*str++)
 			len++;
 	}
-	if (info.precision != -1 && info.precision < len)
-		len = info.precision;
+	if (info->precision != -1 && info->precision < len)
+		len = info->precision;
 	return (len);
 }
 
